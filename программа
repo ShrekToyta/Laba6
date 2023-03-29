@@ -1,0 +1,163 @@
+//abcd2023111111102023
+using System;
+using System.Text.RegularExpressions;
+
+ 
+
+class Program
+{
+    static void Main(string[] args)
+    {
+    
+        Console.Write("a");
+        
+        
+        string target = "happy new year ";
+        string s = Console.ReadLine();
+        string pattern = @"2023";
+        Regex regex = new Regex(@"abcd(2023)1{7}0\1");
+        if (regex.IsMatch(s) == true)
+        {
+            Regex reg = new Regex(pattern);
+            string result = reg.Replace(s, target);
+            Console.WriteLine(result);
+        }
+
+
+        Console.Write("б ");
+
+
+        long max = 0;
+        long sum = 0;
+        int max_index = 0;
+        string s1 = Console.ReadLine();
+        Regex regex1 = new Regex(@"\d");
+        MatchCollection textNumbers = regex1.Matches(s1);
+        List<long> numbers = new List<long>();
+        foreach (Match m in textNumbers)
+        {
+            numbers.Add(long.Parse(m.Value));
+            Console.WriteLine(m.Value);
+        }
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            sum += numbers[i];
+            if (numbers[i] > max)
+            {
+                max = numbers[i];
+                max_index = i + 1;
+            }
+        }
+        Console.WriteLine("Сумма чисел: " + sum);
+        Console.WriteLine("Максимальное число: " + max);
+        Console.WriteLine("Порядковый номер максимального числа: " + max_index);
+
+
+        Console.Write("в");
+
+ 
+        //Строка для проверки -1.23 цифры +4,56
+
+ 
+        //string s2 = Console.ReadLine();
+        //Regex regex2 = new Regex(@"[-+]?[0-9]+[.,]?[0-9]+");
+        //MatchCollection matches = regex2.Matches(s2);
+        //foreach (Match m in matches)
+        //{
+        //    Console.WriteLine(m.Value);
+        //}
+        //string output = regex2.Replace(s2, "number");
+        //Console.WriteLine(output);
+
+
+        //Console.Write("d");
+
+
+        //Строка для проверки C:\Windows\System32\calc.exe
+
+
+
+        string s3 = Console.ReadLine();
+        Regex regex3 = new Regex(@"\\[^.;,]*\\");
+        MatchCollection matches = regex3.Matches(s3);
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+
+ 
+        Console.Write("2a");
+        
+
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    string s = Console.ReadLine();
+        //    Regex regex = new Regex(@"(cat){2}");
+        //    MatchCollection matches = regex.Matches(s);
+        //    foreach (Match match in matches)
+        //    {
+        //        Console.WriteLine(match);
+        //    }
+        //}
+
+ 
+    //    Console.Write("2b");
+
+
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        string s = Console.ReadLine();
+    //        Regex regex = new Regex(@"\b[A-Za-z0-9]{10,}\b");
+    //        MatchCollection matches = regex.Matches(s);
+    //        foreach (Match match in matches)
+    //        {
+    //            string s1 = regex.Replace(s, "*");
+    //            Console.WriteLine(s1);
+    //        }
+    //    }
+
+ 
+    //    Console.Write("2c");
+
+ 
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        string s = Console.ReadLine();
+    //        Regex regex = new Regex(@"(ик\b)");
+    //        string result = regex.Replace(s, string.Empty);
+    //        Console.WriteLine(result);
+    //    }
+
+
+    //    Console.Write("2d");
+
+ 
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        string s = Console.ReadLine();
+    //        Regex regex = new Regex(@"#[ABCDEF0-9]{6}");
+    //        MatchCollection matches = regex.Matches(s);
+    //        foreach (Match match in matches)
+    //        {
+    //            Console.WriteLine(match);
+    //        }
+    //    }
+
+
+    //    Console.Write("2e");
+ 
+
+    //    //Строка для проверки e02fd0e4-00fd-090A-ca30-0d00a0038ba0
+
+
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        string s = Console.ReadLine();
+    //        Regex regex = new Regex(@"([a-fA-F0-9]){8}-\1{4}-\1{4}-\1{4}-\1{12}");
+    //        MatchCollection matches = regex.Matches(s);
+    //        foreach (Match match in matches)
+    //        {
+    //            Console.WriteLine(match);
+    //        }
+       }
+    }
